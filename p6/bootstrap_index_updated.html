@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bloom Flower Shop - Bootstrap</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+		<div class="container">
+			<a class="navbar-brand fw-bold" href="#">Bloom<span class="text-danger">.</span></a>
+
+			<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navMenu">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="#categories">Categories</a></li>
+					<li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+					<li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+					<li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+					<li class="nav-item"><a class="nav-link" href="#order">Order</a></li>
+					<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container mt-3">
+		<div class="alert alert-danger alert-dismissible fade show text-center mb-0" role="alert">
+			<strong>🌸 Fresh flowers, delivered with care!</strong> Free delivery on orders above ₹999.
+			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	</div>
+
+
+	<section id="hero" class="py-5 bg-light">
+		<div class="container">
+			<div class="row align-items-center g-5">
+				<div class="col-lg-6">
+					<span class="badge bg-danger-subtle text-danger mb-3">🌸 Welcome to Bloom</span>
+					<h1 class="display-4 fw-bold">Fresh <span class="text-danger">Flowers</span> Delivered</h1>
+					<p class="lead">Beautiful handcrafted bouquets for every occasion.</p>
+					<a href="#products" class="btn btn-danger me-2">Shop Now</a>
+					<a href="#features" class="btn btn-outline-danger">Learn More</a>
+				</div>
+				<div class="col-lg-6 text-center">
+					<img src="images/flower-13.webp" class="img-fluid rounded shadow" alt="">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="categories" class="py-5">
+		<div class="container">
+			<h2 class="text-center mb-4">Categories</h2>
+			<div class="row g-4">
+				<div class="col-md-6 col-lg-3">
+					<div class="card h-100">
+						<img src="images/rose.webp" class="card-img-top">
+						<div class="card-body text-center">
+							<h5>Real Flowers</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="card h-100">
+						<img src="images/crochet.webp" class="card-img-top">
+						<div class="card-body text-center">
+							<h5>Crochet Flowers</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="card h-100">
+						<img src="images/plastic-flowers.webp" class="card-img-top">
+						<div class="card-body text-center">
+							<h5>Plastic Flowers</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3">
+					<div class="card h-100">
+						<img src="images/origami-flowers.webp" class="card-img-top">
+						<div class="card-body text-center">
+							<h5>Origami Flowers</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="products" class="py-5 bg-light">
+		<div class="container">
+			<h2 class="text-center mb-4">Featured Products</h2>
+			<div class="row g-4">
+				<div class="col-md-6 col-lg-4">
+					<div class="card h-100 shadow-sm">
+						<img src="images/rose-bouqoute.webp" class="card-img-top">
+						<div class="card-body">
+							<h5>Rose Bouquet</h5>
+							<p class="text-danger fw-bold">₹499</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card h-100 shadow-sm">
+						<img src="images/tulip-basket.webp" class="card-img-top">
+						<div class="card-body">
+							<h5>Tulip Basket</h5>
+							<p class="text-danger fw-bold">₹699</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card h-100 shadow-sm">
+						<img src="images/lily-vase.webp" class="card-img-top">
+						<div class="card-body">
+							<h5>Lily Vase</h5>
+							<p class="text-danger fw-bold">₹799</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card h-100 shadow-sm">
+						<img src="images/mixed-bouquet.webp" class="card-img-top">
+						<div class="card-body">
+							<h5>Mixed Bouquet</h5>
+							<p class="text-danger fw-bold">₹899</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card h-100 shadow-sm">
+						<img src="images/wedding-flowers.webp" class="card-img-top">
+						<div class="card-body">
+							<h5>Wedding Flowers</h5>
+							<p class="text-danger fw-bold">₹1499</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-4">
+					<div class="card h-100 shadow-sm">
+						<img src="images/gift-boxes.webp" class="card-img-top">
+						<div class="card-body">
+							<h5>Gift Box</h5>
+							<p class="text-danger fw-bold">₹999</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="features" class="py-5">
+		<div class="container">
+			<h2 class="text-center mb-4">Why Choose Bloom?</h2>
+			<div class="row g-4">
+				<div class="col-md-4">
+					<div class="card h-100 text-center">
+						<div class="card-body">
+							<h3>🌷</h3>
+							<h5>Fresh Flowers</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card h-100 text-center">
+						<div class="card-body">
+							<h3>🚚</h3>
+							<h5>Fast Delivery</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card h-100 text-center">
+						<div class="card-body">
+							<h3>💝</h3>
+							<h5>Made with Love</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="gallery" class="py-5 bg-light">
+		<div class="container">
+			<h2 class="text-center mb-4">Gallery</h2>
+			<div class="row g-3">
+				<div class="col-6 col-md-3"><img src="images/flower-1.webp" class="img-fluid rounded shadow"></div>
+				<div class="col-6 col-md-3"><img src="images/flower-2.webp" class="img-fluid rounded shadow"></div>
+				<div class="col-6 col-md-3"><img src="images/flower-3.webp" class="img-fluid rounded shadow"></div>
+				<div class="col-6 col-md-3"><img src="images/flower-4.webp" class="img-fluid rounded shadow"></div>
+				<div class="col-6 col-md-3"><img src="images/flower-5.webp" class="img-fluid rounded shadow"></div>
+				<div class="col-6 col-md-3"><img src="images/flower-6.webp" class="img-fluid rounded shadow"></div>
+				<div class="col-6 col-md-3"><img src="images/flower-7.webp" class="img-fluid rounded shadow"></div>
+				<div class="col-6 col-md-3"><img src="images/flower-9.webp" class="img-fluid rounded shadow"></div>
+			</div>
+		</div>
+	</section>
+
+	<section id="reviews" class="py-5">
+		<div class="container">
+			<h2 class="text-center mb-4">Customer Reviews</h2>
+			<div class="row g-4">
+				<div class="col-md-4">
+					<div class="card h-100">
+						<div class="card-body">
+							★★★★★
+							<p>Amazing flowers!</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card h-100">
+						<div class="card-body">
+							★★★★★
+							<p>Beautiful bouquets.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card h-100">
+						<div class="card-body">
+							★★★★★
+							<p>Excellent service.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section id="faq" class="py-5 bg-light">
+		<div class="container">
+			<h2 class="text-center mb-2">Flower Care & Delivery</h2>
+			<p class="text-center text-muted mb-4">Everything you need to know before placing your order.</p>
+			<div class="accordion" id="flowerFaq">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="faqHeadingOne">
+						<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">How long will my flowers stay fresh?</button>
+					</h2>
+					<div id="faqOne" class="accordion-collapse collapse show" aria-labelledby="faqHeadingOne" data-bs-parent="#flowerFaq">
+						<div class="accordion-body">With proper care, our fresh bouquets generally stay beautiful for several days. Keep them in clean water and away from direct sunlight.</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="faqHeadingTwo">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">When will my order be delivered?</button>
+					</h2>
+					<div id="faqTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#flowerFaq">
+						<div class="accordion-body">Choose your preferred delivery date while placing your order and we will prepare your flowers for delivery on that date.</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="faqHeadingThree">
+						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">Can I add special instructions?</button>
+					</h2>
+					<div id="faqThree" class="accordion-collapse collapse" aria-labelledby="faqHeadingThree" data-bs-parent="#flowerFaq">
+						<div class="accordion-body">Yes. Use the Special Instructions field in the order form to tell us about your preferred arrangement or delivery requirements.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="order" class="py-5 bg-light">
+		<div class="container">
+			<h2 class="text-center mb-4">Place Your Order</h2>
+			<form class="row g-3 order-form">
+				<div class="col-md-6">
+					<input class="form-control" id="customer-name" placeholder="Name">
+				</div>
+				<div class="col-md-6">
+					<input class="form-control" id="customer-phone" placeholder="Phone">
+				</div>
+				<div class="col-md-6">
+					<select class="form-select" id="flower-type">
+						<option>Real Flowers</option>
+						<option>Crochet Flowers</option>
+					</select>
+				</div>
+				<div class="col-md-6">
+					<select class="form-select" id="product">
+						<option>Rose Bouquet</option>
+						<option>Tulip Basket</option>
+					</select>
+				</div>
+				<div class="col-md-6">
+					<input class="form-control" type="number" id="quantity" value="1">
+				</div>
+				<div class="col-md-6">
+					<input class="form-control" type="date" id="delivery-date">
+				</div>
+				<div class="col-12">
+					<input class="form-control" id="location" readonly placeholder="Fetching location...">
+				</div>
+				<div class="col-12">
+					<textarea class="form-control" id="address" placeholder="Address"></textarea>
+				</div>
+				<div class="col-12">
+					<textarea class="form-control" id="notes" placeholder="Special Instructions"></textarea>
+				</div>
+				<div class="col-12">
+					<div id="dropZone" class="border border-2 border-danger rounded p-5 text-center">
+						<input type="file" id="building-image" hidden accept="image/*">
+						<p>Drag & Drop Building Image Here</p>
+						<button type="button" class="btn btn-outline-danger" id="browseBtn">Browse</button>
+						<p id="fileName" class="mt-2">No image selected</p>
+					</div>
+				</div>
+				<div class="col-12">
+					<button class="btn btn-danger">Place Order</button>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<section id="contact" class="py-5">
+		<div class="container">
+			<h2 class="text-center mb-4">Contact Us</h2>
+			<div class="row g-4">
+				<div class="col-lg-6">
+					<form id="contact-form">
+						<input class="form-control mb-3" placeholder="Name">
+						<input class="form-control mb-3" placeholder="Email">
+						<input class="form-control mb-3" placeholder="Phone">
+						<textarea class="form-control mb-3" rows="5" placeholder="Message"></textarea>
+						<button class="btn btn-danger">Send Message</button>
+					</form>
+				</div>
+				<div class="col-lg-6">
+					<div class="card shadow-sm">
+						<div class="card-body">
+							<h4>Bloom Flower Shop</h4>
+							<p>📍 Ahmedabad, Gujarat</p>
+							<p>📞 +91 98765 43210</p>
+							<p>✉️ hello@bloom.shop</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer class="bg-dark text-white text-center py-4">
+		<p class="mb-0">&copy; 2026 Bloom Flower Shop</p>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

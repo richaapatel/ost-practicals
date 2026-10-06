@@ -1,0 +1,318 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Portfolio of Richa Patel – CSE-MBA student skilled in web development, Java, Python, and more.">
+
+    <title>Richa Patel | Portfolio</title>
+
+    <link rel="stylesheet"
+          href="{% static 'contact/style.css' %}">
+
+</head>
+
+
+<body>
+
+    <!-- Header -->
+
+    <header>
+
+        <h1>Richa Patel</h1>
+
+        <p>
+            CSE-MBA Student &bull; Developer &bull; Learner
+        </p>
+
+    </header>
+
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <a href="#about">About</a>
+
+        <a href="#education">Education</a>
+
+        <a href="#skills">Skills</a>
+
+        <a href="#projects">Projects</a>
+
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <div class="container">
+
+
+        <!-- About Section -->
+
+        <section id="about" class="fade-in">
+
+            <h2>About Me</h2>
+
+            <img src="{% static 'contact/richa-image.JPG' %}"
+                 alt="Richa Patel – Profile Photo">
+
+            <p>
+                I am <b>Richa Patel</b>. I am a 3rd year CSE-MBA
+                student who enjoys learning web development and
+                programming along with some managerial skills.
+            </p>
+
+        </section>
+
+
+        <!-- Education Section -->
+
+        <section id="education" class="fade-in">
+
+            <h2>Education</h2>
+
+            <p>
+                10th &amp; 12th pass out from Tejas Vidyalaya, Vadodara
+            </p>
+
+            <p>
+                Currently pursuing Int. B.Tech Computer Science
+                Engineering – MBA, Nirma University, Ahmedabad
+            </p>
+
+        </section>
+
+
+        <!-- Skills Section -->
+
+        <section id="skills" class="fade-in">
+
+            <h2>My Skills</h2>
+
+            <ul class="skills-grid">
+
+                <li>HTML</li>
+
+                <li>CSS</li>
+
+                <li>Java</li>
+
+                <li>C Programming</li>
+
+                <li>C++</li>
+
+                <li>Python</li>
+
+                <li>SQL</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- Projects Section -->
+
+        <section id="projects" class="fade-in">
+
+            <h2>Projects</h2>
+
+            <div class="projects-grid">
+
+
+                <div class="project">
+
+                    <h3>
+                        Student Management System
+                    </h3>
+
+                    <p>
+                        A simple project developed using Java.
+                    </p>
+
+                </div>
+
+
+                <div class="project">
+
+                    <h3>
+                        E-Commerce Database
+                    </h3>
+
+                    <p>
+                        Database project using SQL.
+                    </p>
+
+                </div>
+
+
+                <div class="project">
+
+                    <h3>
+                        Portfolio Website
+                    </h3>
+
+                    <p>
+                        A personal website created using HTML and CSS.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact Section -->
+
+        <section id="contact" class="fade-in">
+
+            <h2>Contact Me</h2>
+
+
+            <div class="contact-info">
+
+                <div class="contact-item">
+
+                    <strong>Email:</strong>
+                    richa@gmail.com
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <strong>Phone:</strong>
+                    +91 9316161234
+
+                </div>
+
+            </div>
+
+
+            <h3 class="form-heading">
+                Send me a message
+            </h3>
+
+
+            <!-- Django Contact Form -->
+
+            <form method="POST"
+                  action="{% url 'home' %}"
+                  id="contactForm">
+
+                {% csrf_token %}
+
+
+                <!-- Name -->
+
+                <div class="form-group">
+
+                    <label for="{{ form.name.id_for_label }}">
+                        Name
+                    </label>
+
+                    {{ form.name }}
+
+                    {% if form.name.errors %}
+
+                        {% for error in form.name.errors %}
+
+                            <span class="error-msg">
+                                {{ error }}
+                            </span>
+
+                        {% endfor %}
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="{{ form.email.id_for_label }}">
+                        Email
+                    </label>
+
+                    {{ form.email }}
+
+                    {% if form.email.errors %}
+
+                        {% for error in form.email.errors %}
+
+                            <span class="error-msg">
+                                {{ error }}
+                            </span>
+
+                        {% endfor %}
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- Message -->
+
+                <div class="form-group">
+
+                    <label for="{{ form.message.id_for_label }}">
+                        Message
+                    </label>
+
+                    {{ form.message }}
+
+                    {% if form.message.errors %}
+
+                        {% for error in form.message.errors %}
+
+                            <span class="error-msg">
+                                {{ error }}
+                            </span>
+
+                        {% endfor %}
+
+                    {% endif %}
+
+                </div>
+
+
+                <button type="submit" id="submitBtn">
+                    Send Message
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Richa Patel | My Portfolio
+        </p>
+
+    </footer>
+
+
+    <script src="{% static 'contact/script.js' %}?v=2"></script>
+
+</body>
+
+</html>

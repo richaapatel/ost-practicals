@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CRUD App{% endblock %} | Richa Patel</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'crud/style.css' %}">
+</head>
+<body>
+
+    <header>
+        <h1>Richa Patel</h1>
+        <p>CSE-MBA Student &bull; Developer &bull; Learner</p>
+    </header>
+
+    <nav>
+        <a href="{% url 'item_list' %}">Home</a>
+        <a href="{% url 'item_create' %}">Add Item</a>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="fade-in visible">
+            <h2>About Me</h2>
+            <img src="{% static 'crud/ABDL9962.JPG' %}" alt="Richa Patel – Profile Photo">
+            <p>
+                I am <b>Richa Patel</b>. I am a 3rd year CSE-MBA student who enjoys learning web development and programming along with some managerial skills.
+            </p>
+        </section>
+
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Richa Patel | CRUD Operations with Django &amp; SQLite</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Portfolio of Richa Patel – CSE-MBA student skilled in web development, Java, Python, and more. Built with Bootstrap 5.">
+
+    <title>Richa Patel | Portfolio</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+
+        /* =========================
+           CSS VARIABLES
+        ========================== */
+
+        :root {
+            --primary: #2c3e50;
+            --primary-light: #34495e;
+            --accent: #1271b0;
+            --accent-dark: #2980b9;
+            --bg: #f0f2f5;
+            --text: #333333;
+            --text-light: #666666;
+
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+            --radius: 12px;
+            --transition: 0.3s ease;
+        }
+
+
+        /* =========================
+           BASE
+        ========================== */
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        .navbar {
+            background: var(--primary-light) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            color: #fff !important;
+            font-size: 1.15rem;
+        }
+
+        .navbar .nav-link {
+            color: rgba(255, 255, 255, 0.85) !important;
+            font-weight: 600;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 6px 14px;
+            transition: color var(--transition);
+        }
+
+        .navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 14px;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width var(--transition);
+        }
+
+        .navbar .nav-link:hover::after,
+        .navbar .nav-link.active::after {
+            width: calc(100% - 28px);
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: var(--accent) !important;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero-section {
+            background: linear-gradient(
+                135deg,
+                var(--primary) 0%,
+                var(--accent-dark) 100%
+            );
+
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px 50px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+
+
+        /* =========================
+           SECTION CARDS
+        ========================== */
+
+        .section-card {
+            background: #fff;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 40px 35px;
+            margin-bottom: 25px;
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition);
+        }
+
+        .section-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+
+
+        /* =========================
+           PROFILE IMAGE
+        ========================== */
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            object-fit: cover;
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.35);
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================== */
+
+        .skill-badge {
+            background: linear-gradient(
+                135deg,
+                var(--accent),
+                var(--accent-dark)
+            ) !important;
+
+            color: #fff !important;
+
+            font-size: 0.9rem;
+            font-weight: 600;
+
+            padding: 8px 20px;
+            border-radius: 25px;
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition);
+
+            cursor: default;
+        }
+
+        .skill-badge:hover {
+            transform: translateY(-3px) scale(1.05);
+
+            box-shadow:
+                0 4px 12px rgba(52, 152, 219, 0.4);
+        }
+
+
+        /* =========================
+           PROGRESS BARS
+        ========================== */
+
+        .progress {
+            height: 22px;
+            border-radius: 12px;
+            background: #e9ecef;
+        }
+
+        .progress-bar {
+            background: linear-gradient(
+                135deg,
+                var(--accent),
+                var(--accent-dark)
+            );
+
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           PROJECT CARDS
+        ========================== */
+
+        .project-card {
+            border: none;
+            border-left: 5px solid var(--accent);
+            border-radius: var(--radius);
+
+            background: var(--bg);
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .project-card .card-title {
+            color: var(--primary);
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .project-card .card-text {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Used when jQuery filters project cards */
+        .project-card.filtered-out {
+            display: none;
+        }
+
+
+        /* =========================
+           PROJECT FILTER BUTTONS
+        ========================== */
+
+        .project-filter {
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .project-filter.active-filter {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+
+        /* =========================
+           ACCORDION
+        ========================== */
+
+        .accordion-button {
+            font-weight: 600;
+            color: var(--primary);
+            background: #fff;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: linear-gradient(
+                135deg,
+                var(--accent),
+                var(--accent-dark)
+            );
+
+            color: #fff;
+            box-shadow: none;
+        }
+
+        .accordion-button:focus {
+            border-color: var(--accent);
+
+            box-shadow:
+                0 0 0 3px rgba(52, 152, 219, 0.15);
+        }
+
+        .accordion-item {
+            border-radius: 8px !important;
+            overflow: hidden;
+
+            border: 1px solid #dee2e6;
+
+            margin-bottom: 8px;
+        }
+
+
+        /* =========================
+           CAROUSEL
+        ========================== */
+
+        .carousel-section .carousel-item {
+            padding: 40px 20px;
+            text-align: center;
+            min-height: 180px;
+        }
+
+        .carousel-section .carousel-inner {
+            background: linear-gradient(
+                135deg,
+                var(--primary) 0%,
+                var(--accent-dark) 100%
+            );
+
+            border-radius: var(--radius);
+            color: #fff;
+        }
+
+        .carousel-section .carousel-control-prev-icon,
+        .carousel-section .carousel-control-next-icon {
+            filter: brightness(1);
+        }
+
+        .carousel-quote {
+            font-size: 1.2rem;
+            font-style: italic;
+
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .carousel-quote footer {
+            background: transparent;
+
+            font-style: normal;
+            font-size: 0.9rem;
+
+            opacity: 0.75;
+
+            margin-top: 12px;
+        }
+
+
+        /* =========================
+           MODALS
+        ========================== */
+
+        .modal-header {
+            background: linear-gradient(
+                135deg,
+                var(--primary) 0%,
+                var(--accent-dark) 100%
+            );
+
+            color: #fff;
+        }
+
+        .modal-header .btn-close {
+            filter: brightness(0) invert(1);
+        }
+
+
+        /* =========================
+           FORM
+        ========================== */
+
+        .contact-form .form-control:focus {
+            border-color: var(--accent);
+
+            box-shadow:
+                0 0 0 3px rgba(52, 152, 219, 0.15);
+        }
+
+        .contact-form .form-label {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        #messageCounter {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================== */
+
+        .btn-accent {
+            background: linear-gradient(
+                135deg,
+                var(--accent),
+                var(--accent-dark)
+            );
+
+            color: #fff;
+            border: none;
+
+            font-weight: 600;
+
+            transition:
+                transform var(--transition),
+                box-shadow var(--transition);
+        }
+
+        .btn-accent:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 4px 14px rgba(52, 152, 219, 0.4);
+
+            color: #fff;
+        }
+
+        .btn-accent:active {
+            transform: translateY(0);
+            color: #fff;
+        }
+
+
+        /* =========================
+           CONTACT LIST
+        ========================== */
+
+        .list-group-item {
+            border: none;
+            background: transparent;
+
+            color: var(--text-light);
+
+            font-size: 1rem;
+            padding: 10px 0;
+        }
+
+        .list-group-item i {
+            color: var(--accent);
+
+            font-size: 1.2rem;
+
+            margin-right: 10px;
+        }
+
+        .list-group-item strong {
+            color: var(--primary);
+        }
+
+
+        /* =========================
+           FORM FEEDBACK
+        ========================== */
+
+        #formMessage {
+            display: none;
+        }
+
+
+        /* =========================
+           BACK TO TOP BUTTON
+        ========================== */
+
+        #backToTop {
+            display: none;
+
+            position: fixed;
+
+            bottom: 25px;
+            right: 25px;
+
+            z-index: 1000;
+
+            width: 45px;
+            height: 45px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background: var(--accent);
+            color: white;
+
+            box-shadow: var(--shadow);
+        }
+
+        #backToTop:hover {
+            background: var(--accent-dark);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer.main-footer {
+            background: linear-gradient(
+                135deg,
+                var(--primary) 0%,
+                var(--accent-dark) 100%
+            );
+
+            color: #fff;
+        }
+
+        footer.main-footer p {
+            opacity: 0.9;
+            margin: 0;
+        }
+
+
+        /* =========================
+           FADE-IN
+        ========================== */
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(25px);
+
+            transition:
+                opacity 0.6s ease,
+                transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 768px) {
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .hero-section {
+                padding: 35px 15px 30px;
+            }
+
+            .section-card {
+                padding: 22px 20px;
+            }
+
+            .section-title {
+                font-size: 1.35rem;
+            }
+
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+
+
+        @media (max-width: 480px) {
+
+            .hero-section h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero-section p {
+                font-size: 0.95rem;
+            }
+
+            .section-card {
+                padding: 18px 15px;
+            }
+
+            .skill-badge {
+                padding: 6px 15px;
+                font-size: 0.85rem;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#home">
+                Richa Patel
+            </a>
+
+            <button class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#mainNav"
+                    aria-controls="mainNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="mainNav">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#about">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">
+                            Education
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">
+                            Skills
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">
+                            Testimonials
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <header class="hero-section" id="home">
+
+        <h1 id="heroTitle">
+            Richa Patel
+        </h1>
+
+        <p id="heroSubtitle">
+            CSE-MBA Student &bull; Developer &bull; Learner
+        </p>
+
+    </header>
+
+
+
+    <div class="container my-4">
+
+
+        <!-- =========================
+             ABOUT
+        ========================== -->
+
+        <section id="about"
+                 class="section-card text-center fade-in visible">
+
+            <h2 class="section-title">
+                About Me
+            </h2>
+
+            <div class="mt-3">
+
+                <img src="richa-image.JPG"
+                     alt="Richa Patel – Profile Photo"
+                     class="profile-img mb-3">
+
+                <p id="aboutText"
+                   class="text-start text-muted"
+                   style="font-size: 1.05rem;">
+
+                    I am <b>Richa Patel</b>.
+                    I am a 3rd year CSE-MBA student who enjoys
+                    learning web development and programming
+                    along with some managerial skills.
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             EDUCATION
+        ========================== -->
+
+        <section id="education"
+                 class="section-card fade-in visible">
+
+            <h2 class="section-title">
+                Education
+            </h2>
+
+            <div class="accordion mt-3"
+                 id="educationAccordion">
+
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header"
+                        id="eduHead1">
+
+                        <button class="accordion-button"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#eduCollapse1"
+                                aria-expanded="true"
+                                aria-controls="eduCollapse1">
+
+                            <i class="bi bi-mortarboard-fill me-2"></i>
+
+                            School Education
+
+                        </button>
+
+                    </h2>
+
+
+                    <div id="eduCollapse1"
+                         class="accordion-collapse collapse show"
+                         aria-labelledby="eduHead1"
+                         data-bs-parent="#educationAccordion">
+
+                        <div class="accordion-body text-muted">
+
+                            10th &amp; 12th pass out from
+                            <strong>
+                                Tejas Vidyalaya, Vadodara
+                            </strong>.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="accordion-item">
+
+                    <h2 class="accordion-header"
+                        id="eduHead2">
+
+                        <button class="accordion-button collapsed"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#eduCollapse2"
+                                aria-expanded="false"
+                                aria-controls="eduCollapse2">
+
+                            <i class="bi bi-building me-2"></i>
+
+                            University Education
+
+                        </button>
+
+                    </h2>
+
+
+                    <div id="eduCollapse2"
+                         class="accordion-collapse collapse"
+                         aria-labelledby="eduHead2"
+                         data-bs-parent="#educationAccordion">
+
+                        <div class="accordion-body text-muted">
+
+                            Currently pursuing
+                            <strong>
+                                Int. B.Tech Computer Science Engineering – MBA
+                            </strong>,
+
+                            Nirma University, Ahmedabad.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             SKILLS
+        ========================== -->
+
+        <section id="skills"
+                 class="section-card fade-in visible">
+
+            <h2 class="section-title">
+                My Skills
+            </h2>
+
+
+            <div id="skillsList"
+                 class="d-flex flex-wrap gap-2 mt-3 mb-4">
+
+                <span class="badge skill-badge">
+                    HTML
+                </span>
+
+                <span class="badge skill-badge">
+                    CSS
+                </span>
+
+                <span class="badge skill-badge">
+                    Java
+                </span>
+
+                <span class="badge skill-badge">
+                    C Programming
+                </span>
+
+                <span class="badge skill-badge">
+                    C++
+                </span>
+
+                <span class="badge skill-badge">
+                    Python
+                </span>
+
+                <span class="badge skill-badge">
+                    SQL
+                </span>
+
+            </div>
+
+
+            <h5 class="mt-4 mb-3"
+                style="color: var(--primary); font-weight: 600;">
+
+                Proficiency
+
+            </h5>
+
+
+            <div class="mb-2">
+
+                <small class="fw-semibold">
+                    HTML &amp; CSS
+                </small>
+
+                <div class="progress mt-1">
+
+                    <div class="progress-bar"
+                         role="progressbar"
+                         style="width: 85%;"
+                         aria-valuenow="85"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+
+                        85%
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="mb-2">
+
+                <small class="fw-semibold">
+                    Java
+                </small>
+
+                <div class="progress mt-1">
+
+                    <div class="progress-bar"
+                         role="progressbar"
+                         style="width: 75%;"
+                         aria-valuenow="75"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+
+                        75%
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="mb-2">
+
+                <small class="fw-semibold">
+                    Python
+                </small>
+
+                <div class="progress mt-1">
+
+                    <div class="progress-bar"
+                         role="progressbar"
+                         style="width: 70%;"
+                         aria-valuenow="70"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+
+                        70%
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="mb-2">
+
+                <small class="fw-semibold">
+                    C / C++
+                </small>
+
+                <div class="progress mt-1">
+
+                    <div class="progress-bar"
+                         role="progressbar"
+                         style="width: 65%;"
+                         aria-valuenow="65"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+
+                        65%
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="mb-2">
+
+                <small class="fw-semibold">
+                    SQL
+                </small>
+
+                <div class="progress mt-1">
+
+                    <div class="progress-bar"
+                         role="progressbar"
+                         style="width: 60%;"
+                         aria-valuenow="60"
+                         aria-valuemin="0"
+                         aria-valuemax="100">
+
+                        60%
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section id="projects"
+                 class="section-card fade-in visible">
+
+            <h2 class="section-title">
+                Projects
+            </h2>
+
+
+            <!-- Project filter -->
+            <div class="d-flex flex-wrap gap-2 mt-2 mb-4">
+
+                <button type="button"
+                        class="btn btn-outline-primary btn-sm project-filter active-filter"
+                        data-filter="all">
+
+                    All Projects
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-outline-primary btn-sm project-filter"
+                        data-filter="java">
+
+                    Java
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-outline-primary btn-sm project-filter"
+                        data-filter="sql">
+
+                    SQL
+
+                </button>
+
+                <button type="button"
+                        class="btn btn-outline-primary btn-sm project-filter"
+                        data-filter="web">
+
+                    Web Development
+
+                </button>
+
+            </div>
+
+
+            <div class="row g-4 mt-1"
+                 id="projectList">
+
+
+                <!-- Project 1 -->
+
+                <div class="col-md-4 project-item"
+                     data-category="java">
+
+                    <div class="card project-card h-100">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+
+                                <i class="bi bi-people-fill me-2 text-primary"></i>
+
+                                Student Management System
+
+                            </h5>
+
+                            <p class="card-text">
+
+                                A simple project developed using Java.
+
+                            </p>
+
+                            <button type="button"
+                                    class="btn btn-accent btn-sm mt-2"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#projectModal1">
+
+                                <i class="bi bi-eye me-1"></i>
+
+                                View Details
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Project 2 -->
+
+                <div class="col-md-4 project-item"
+                     data-category="sql">
+
+                    <div class="card project-card h-100">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+
+                                <i class="bi bi-book-fill me-2 text-primary"></i>
+
+                                Library Management System
+
+                            </h5>
+
+                            <p class="card-text">
+
+                                Database project using SQL.
+
+                            </p>
+
+                            <button type="button"
+                                    class="btn btn-accent btn-sm mt-2"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#projectModal2">
+
+                                <i class="bi bi-eye me-1"></i>
+
+                                View Details
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Project 3 -->
+
+                <div class="col-md-4 project-item"
+                     data-category="web">
+
+                    <div class="card project-card h-100">
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+
+                                <i class="bi bi-globe me-2 text-primary"></i>
+
+                                Portfolio Website
+
+                            </h5>
+
+                            <p class="card-text">
+
+                                A personal website created using
+                                HTML and CSS.
+
+                            </p>
+
+                            <button type="button"
+                                    class="btn btn-accent btn-sm mt-2"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#projectModal3">
+
+                                <i class="bi bi-eye me-1"></i>
+
+                                View Details
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Message displayed when no project matches -->
+
+            <p id="noProjectsMessage"
+               class="text-center text-muted mt-4"
+               style="display: none;">
+
+                No projects found for this category.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================
+             TESTIMONIALS
+        ========================== -->
+
+        <section id="testimonials"
+                 class="section-card carousel-section fade-in visible">
+
+            <h2 class="section-title">
+                Testimonials
+            </h2>
+
+
+            <div id="testimonialCarousel"
+                 class="carousel slide mt-3"
+                 data-bs-ride="carousel">
+
+
+                <div class="carousel-indicators">
+
+                    <button type="button"
+                            data-bs-target="#testimonialCarousel"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="Slide 1">
+                    </button>
+
+                    <button type="button"
+                            data-bs-target="#testimonialCarousel"
+                            data-bs-slide-to="1"
+                            aria-label="Slide 2">
+                    </button>
+
+                    <button type="button"
+                            data-bs-target="#testimonialCarousel"
+                            data-bs-slide-to="2"
+                            aria-label="Slide 3">
+                    </button>
+
+                </div>
+
+
+                <div class="carousel-inner">
+
+
+                    <div class="carousel-item active">
+
+                        <div class="carousel-quote">
+
+                            <i class="bi bi-quote"
+                               style="font-size: 2rem; opacity: 0.5;">
+                            </i>
+
+                            <p>
+                                "Richa is a dedicated learner who consistently
+                                delivers quality work in her projects."
+                            </p>
+
+                            <footer>
+                                — Prof. Sharma, Nirma University
+                            </footer>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="carousel-item">
+
+                        <div class="carousel-quote">
+
+                            <i class="bi bi-quote"
+                               style="font-size: 2rem; opacity: 0.5;">
+                            </i>
+
+                            <p>
+                                "Great team player with strong programming
+                                fundamentals and a keen eye for design."
+                            </p>
+
+                            <footer>
+                                — Aryan, Project Teammate
+                            </footer>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="carousel-item">
+
+                        <div class="carousel-quote">
+
+                            <i class="bi bi-quote"
+                               style="font-size: 2rem; opacity: 0.5;">
+                            </i>
+
+                            <p>
+                                "Her ability to blend technical skills with
+                                management knowledge sets her apart."
+                            </p>
+
+                            <footer>
+                                — Dr. Mehta, HOD CSE
+                            </footer>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#testimonialCarousel"
+                        data-bs-slide="prev">
+
+                    <span class="carousel-control-prev-icon"
+                          aria-hidden="true">
+                    </span>
+
+                    <span class="visually-hidden">
+                        Previous
+                    </span>
+
+                </button>
+
+
+                <button class="carousel-control-next"
+                        type="button"
+                        data-bs-target="#testimonialCarousel"
+                        data-bs-slide="next">
+
+                    <span class="carousel-control-next-icon"
+                          aria-hidden="true">
+                    </span>
+
+                    <span class="visually-hidden">
+                        Next
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section id="contact"
+                 class="section-card text-center fade-in visible">
+
+            <h2 class="section-title">
+                Contact Me
+            </h2>
+
+
+            <!-- Contact information -->
+
+            <ul class="list-group list-group-flush mx-auto mb-4"
+                style="max-width: 400px;">
+
+                <li class="list-group-item text-start">
+
+                    <i class="bi bi-envelope-fill"></i>
+
+                    <strong>Email:</strong>
+                    richa@gmail.com
+
+                </li>
+
+
+                <li class="list-group-item text-start">
+
+                    <i class="bi bi-telephone-fill"></i>
+
+                    <strong>Phone:</strong>
+                    +91 9316161234
+
+                </li>
+
+
+                <li class="list-group-item text-start">
+
+                    <i class="bi bi-geo-alt-fill"></i>
+
+                    <strong>Location:</strong>
+                    Ahmedabad, Gujarat
+
+                </li>
+
+            </ul>
+
+
+
+            <!-- Social links -->
+
+            <div class="d-flex justify-content-center gap-3 mb-4">
+
+                <a href="#"
+                   class="btn btn-outline-primary btn-sm"
+                   data-bs-toggle="tooltip"
+                   data-bs-placement="top"
+                   title="LinkedIn Profile">
+
+                    <i class="bi bi-linkedin"></i>
+                    LinkedIn
+
+                </a>
+
+
+                <a href="#"
+                   class="btn btn-outline-dark btn-sm"
+                   data-bs-toggle="tooltip"
+                   data-bs-placement="top"
+                   title="GitHub Profile">
+
+                    <i class="bi bi-github"></i>
+                    GitHub
+
+                </a>
+
+
+                <a href="#"
+                   class="btn btn-outline-info btn-sm"
+                   data-bs-toggle="tooltip"
+                   data-bs-placement="top"
+                   title="Twitter Profile">
+
+                    <i class="bi bi-twitter-x"></i>
+                    Twitter
+
+                </a>
+
+            </div>
+
+
+
+            <!-- Contact form -->
+
+            <h5 class="mt-3 mb-3"
+                style="color: var(--primary); font-weight: 600;">
+
+                Send a Message
+
+            </h5>
+
+
+            <form id="contactForm"
+                  class="contact-form text-start mx-auto"
+                  style="max-width: 500px;"
+                  novalidate>
+
+
+                <!-- Name -->
+
+                <div class="mb-3">
+
+                    <label for="nameInput"
+                           class="form-label">
+
+                        Your Name
+
+                    </label>
+
+                    <input type="text"
+                           class="form-control"
+                           id="nameInput"
+                           placeholder="Enter your name"
+                           required
+                           minlength="2">
+
+                    <div class="invalid-feedback">
+
+                        Please enter your name
+                        (at least 2 characters).
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Email -->
+
+                <div class="mb-3">
+
+                    <label for="emailInput"
+                           class="form-label">
+
+                        Email Address
+
+                    </label>
+
+                    <input type="email"
+                           class="form-control"
+                           id="emailInput"
+                           placeholder="Enter your email"
+                           required>
+
+                    <div class="invalid-feedback">
+
+                        Please enter a valid email address.
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Message -->
+
+                <div class="mb-3">
+
+                    <label for="messageInput"
+                           class="form-label">
+
+                        Message
+
+                    </label>
+
+                    <textarea class="form-control"
+                              id="messageInput"
+                              rows="4"
+                              maxlength="500"
+                              placeholder="Write your message..."
+                              required
+                              minlength="10">
+                    </textarea>
+
+                    <div class="d-flex justify-content-between mt-1">
+
+                        <div class="invalid-feedback">
+                            Please enter a message
+                            (at least 10 characters).
+                        </div>
+
+                        <small id="messageCounter">
+                            0 / 500 characters
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Submit -->
+
+                <div class="text-center">
+
+                    <button type="submit"
+                            class="btn btn-accent px-4 py-2"
+                            id="submitBtn">
+
+                        <i class="bi bi-send-fill me-1"></i>
+
+                        Send Message
+
+                    </button>
+
+                </div>
+
+
+                <!-- Dynamic form message -->
+
+                <div id="formMessage"
+                     class="alert text-center mt-3"
+                     role="alert">
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+
+    <!-- =========================
+         PROJECT MODAL 1
+    ========================== -->
+
+    <div class="modal fade"
+         id="projectModal1"
+         tabindex="-1"
+         aria-labelledby="projectModal1Label"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title"
+                        id="projectModal1Label">
+
+                        <i class="bi bi-people-fill me-2"></i>
+
+                        Student Management System
+
+                    </h5>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <p>
+                        <strong>Technology:</strong>
+                        Java
+                    </p>
+
+                    <p>
+                        A comprehensive student management system
+                        that handles student records, grades, and
+                        attendance tracking.
+                    </p>
+
+                    <span class="badge bg-warning text-dark me-1">
+                        Java
+                    </span>
+
+                    <span class="badge bg-info text-dark me-1">
+                        OOP
+                    </span>
+
+                    <span class="badge bg-secondary">
+                        File I/O
+                    </span>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button type="button"
+                            class="btn btn-secondary btn-sm"
+                            data-bs-dismiss="modal">
+
+                        Close
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         PROJECT MODAL 2
+    ========================== -->
+
+    <div class="modal fade"
+         id="projectModal2"
+         tabindex="-1"
+         aria-labelledby="projectModal2Label"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title"
+                        id="projectModal2Label">
+
+                        <i class="bi bi-book-fill me-2"></i>
+
+                        Library Management System
+
+                    </h5>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <p>
+                        <strong>Technology:</strong>
+                        SQL
+                    </p>
+
+                    <p>
+                        A database-driven library management system
+                        for tracking books, members, and borrowing
+                        history.
+                    </p>
+
+                    <span class="badge bg-success me-1">
+                        SQL
+                    </span>
+
+                    <span class="badge bg-info text-dark me-1">
+                        Database Design
+                    </span>
+
+                    <span class="badge bg-secondary">
+                        RDBMS
+                    </span>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button type="button"
+                            class="btn btn-secondary btn-sm"
+                            data-bs-dismiss="modal">
+
+                        Close
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         PROJECT MODAL 3
+    ========================== -->
+
+    <div class="modal fade"
+         id="projectModal3"
+         tabindex="-1"
+         aria-labelledby="projectModal3Label"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+
+                    <h5 class="modal-title"
+                        id="projectModal3Label">
+
+                        <i class="bi bi-globe me-2"></i>
+
+                        Portfolio Website
+
+                    </h5>
+
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body">
+
+                    <p>
+                        <strong>Technology:</strong>
+                        HTML, CSS, JavaScript, jQuery
+                    </p>
+
+                    <p>
+                        A personal portfolio website showcasing
+                        projects, skills, education, and contact
+                        information.
+                    </p>
+
+                    <span class="badge bg-danger me-1">
+                        HTML
+                    </span>
+
+                    <span class="badge bg-primary me-1">
+                        CSS
+                    </span>
+
+                    <span class="badge bg-warning text-dark me-1">
+                        JavaScript
+                    </span>
+
+                    <span class="badge bg-dark">
+                        jQuery
+                    </span>
+
+                </div>
+
+
+                <div class="modal-footer">
+
+                    <button type="button"
+                            class="btn btn-secondary btn-sm"
+                            data-bs-dismiss="modal">
+
+                        Close
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         TOAST
+    ========================== -->
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3"
+         style="z-index: 1100;">
+
+        <div id="formToast"
+             class="toast align-items-center text-bg-success border-0"
+             role="alert"
+             aria-live="assertive"
+             aria-atomic="true">
+
+            <div class="d-flex">
+
+                <div class="toast-body">
+
+                    <i class="bi bi-check-circle-fill me-2"></i>
+
+                    Your message has been sent successfully!
+
+                </div>
+
+                <button type="button"
+                        class="btn-close btn-close-white me-2 m-auto"
+                        data-bs-dismiss="toast"
+                        aria-label="Close">
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         BACK TO TOP
+    ========================== -->
+
+    <button id="backToTop"
+            type="button"
+            title="Back to top"
+            aria-label="Back to top">
+
+        <i class="bi bi-arrow-up"></i>
+
+    </button>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="main-footer text-center py-3 mt-4">
+
+        <p id="footerText">
+
+            &copy; 2026 Richa Patel |
+            Designed with
+            <i class="bi bi-heart-fill text-danger"></i>
+            using Bootstrap 5 & JQuery
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous">
+    </script>
+
+    <!-- Separate jQuery file (loaded after Bootstrap so bootstrap.Tooltip etc. are available) -->
+    <script src="portfolio-jquery1.js"></script>
+
+</body>
+</html>

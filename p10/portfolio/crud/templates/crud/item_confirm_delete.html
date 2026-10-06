@@ -1,0 +1,13 @@
+{% extends 'crud/base.html' %}
+{% block title %}Delete Item{% endblock %}
+{% block content %}
+<section class="fade-in visible">
+    <h2>Delete Item</h2>
+    <p>Are you sure you want to delete "<strong>{{ item.name }}</strong>"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-delete">Yes, Delete</button>
+        <a href="{% url 'item_list' %}" class="btn btn-cancel">Cancel</a>
+    </form>
+</section>
+{% endblock %}
