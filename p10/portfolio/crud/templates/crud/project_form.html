@@ -1,7 +1,7 @@
 {% extends 'crud/base.html' %}
 {% block title %}{{ title }}{% endblock %}
 {% block content %}
-<section class="fade-in visible">
+<section>
     <h2>{{ title }}</h2>
     <form method="post">
         {% csrf_token %}
@@ -14,8 +14,8 @@
             {% endif %}
         </div>
         {% endfor %}
-        <button type="submit" class="btn btn-add">Save</button>
-        <a href="{% url 'item_list' %}" class="btn btn-cancel">Cancel</a>
+        <button type="submit" class="btn btn-add">Save Project</button>
+        <a href="{% url 'project_list' %}" class="btn btn-cancel">Cancel</a>
     </form>
 </section>
 {% endblock %}

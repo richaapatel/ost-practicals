@@ -1,11 +1,12 @@
 from django import forms
-from .models import Item
+from .models import Project
 
-class ItemForm(forms.ModelForm):
+class ProjectForm(forms.ModelForm):
     class Meta:
-        model = Item
-        fields = ['name', 'description']
+        model = Project
+        fields = ['title', 'description', 'technology']
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'Enter item name'}),
-            'description': forms.Textarea(attrs={'class': 'form-input', 'placeholder': 'Enter description', 'rows': 4}),
+            'title': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'e.g. Student Management System'}),
+            'description': forms.Textarea(attrs={'class': 'form-input', 'placeholder': 'Brief description of the project', 'rows': 4}),
+            'technology': forms.TextInput(attrs={'class': 'form-input', 'placeholder': 'e.g. Python, Django, SQLite'}),
         }

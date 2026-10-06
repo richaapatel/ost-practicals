@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}CRUD App{% endblock %} | Richa Patel</title>
+    <title>{% block title %}Portfolio{% endblock %} | Richa Patel</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'crud/style.css' %}">
 </head>
@@ -15,16 +15,17 @@
     </header>
 
     <nav>
-        <a href="{% url 'item_list' %}">Home</a>
-        <a href="{% url 'item_create' %}">Add Item</a>
+        <a href="{% url 'project_list' %}">My Projects</a>
+        <a href="{% url 'project_create' %}">Add Project</a>
     </nav>
 
     <div class="container">
-        <section id="about" class="fade-in visible">
+        <section id="about">
             <h2>About Me</h2>
             <img src="{% static 'crud/ABDL9962.JPG' %}" alt="Richa Patel – Profile Photo">
             <p>
                 I am <b>Richa Patel</b>. I am a 3rd year CSE-MBA student who enjoys learning web development and programming along with some managerial skills.
+                This portfolio showcases my projects and supports full CRUD operations backed by a SQLite database using Django.
             </p>
         </section>
 
@@ -32,7 +33,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Richa Patel | CRUD Operations with Django &amp; SQLite</p>
+        <p>&copy; 2026 Richa Patel | Portfolio with Django CRUD &amp; SQLite</p>
     </footer>
 
 </body>

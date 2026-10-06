@@ -1,35 +1,35 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Item
-from .forms import ItemForm
+from .models import Project
+from .forms import ProjectForm
 
-def item_list(request):
-    items = Item.objects.all().order_by('-created_at')
-    return render(request, 'crud/item_list.html', {'items': items})
+def project_list(request):
+    projects = Project.objects.all().order_by('-created_at')
+    return render(request, 'crud/project_list.html', {'projects': projects})
 
-def item_create(request):
+def project_create(request):
     if request.method == 'POST':
-        form = ItemForm(request.POST)
+        form = ProjectForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('item_list')
+            return redirect('project_list')
     else:
-        form = ItemForm()
-    return render(request, 'crud/item_form.html', {'form': form, 'title': 'Add Item'})
+        form = ProjectForm()
+    return render(request, 'crud/project_form.html', {'form': form, 'title': 'Add Project'})
 
-def item_update(request, pk):
-    item = get_object_or_404(Item, pk=pk)
+def project_update(request, pk):
+    project = get_object_or_404(Project, pk=pk)
     if request.method == 'POST':
-        form = ItemForm(request.POST, instance=item)
+        form = ProjectForm(request.POST, instance=project)
         if form.is_valid():
             form.save()
-            return redirect('item_list')
+            return redirect('project_list')
     else:
-        form = ItemForm(instance=item)
-    return render(request, 'crud/item_form.html', {'form': form, 'title': 'Update Item'})
+        form = ProjectForm(instance=project)
+    return render(request, 'crud/project_form.html', {'form': form, 'title': 'Update Project'})
 
-def item_delete(request, pk):
-    item = get_object_or_404(Item, pk=pk)
+def project_delete(request, pk):
+    project = get_object_or_404(Project, pk=pk)
     if request.method == 'POST':
-        item.delete()
-        return redirect('item_list')
-    return render(request, 'crud/item_confirm_delete.html', {'item': item})
+        project.delete()
+        return redirect('project_list')
+    return render(request, 'crud/project_confirm_delete.html', {'project': project})

@@ -1,0 +1,39 @@
+{% extends 'crud/base.html' %}
+{% block title %}My Projects{% endblock %}
+{% block content %}
+<section>
+    <h2>My Projects</h2>
+    <a href="{% url 'project_create' %}" class="btn btn-add">+ Add New Project</a>
+    {% if projects %}
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Project Title</th>
+                <th>Description</th>
+                <th>Technology</th>
+                <th>Added On</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for project in projects %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td>{{ project.title }}</td>
+                <td>{{ project.description|truncatewords:12 }}</td>
+                <td>{{ project.technology }}</td>
+                <td>{{ project.created_at|date:"d M Y" }}</td>
+                <td>
+                    <a href="{% url 'project_update' project.pk %}" class="btn btn-edit">Edit</a>
+                    <a href="{% url 'project_delete' project.pk %}" class="btn btn-delete">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p class="empty-msg">No projects yet. Click "Add New Project" to showcase your work!</p>
+    {% endif %}
+</section>
+{% endblock %}

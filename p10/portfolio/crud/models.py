@@ -1,9 +1,10 @@
 from django.db import models
 
-class Item(models.Model):
-    name = models.CharField(max_length=200)
-    description = models.TextField(blank=True)
+class Project(models.Model):
+    title = models.CharField(max_length=200)
+    description = models.TextField()
+    technology = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.title
